@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap');
+
+/* Color Variables and Tokens */
+:root {
+    --b50: #ECF7FE;
+    --b100: #D0EDFF;
+    --b200: #9EDAFE;
+    --b300: #55C4FF;
+    --b400: #09ABEC;
+    --b500: #0491C9;
+    --b600: #0675A2;
+    --b700: #005D82;
+    --b800: #00435F;
+    --b900: #002A3F;
+    --y50: #FFFAD8;
+    --y100: #FFF2B0;
+    --y200: #FFE682;
+    --y300: #FFD74B;
+    --y400: #FAC706;
+    --y500: #E6AD00;
+    --y600: #C38908;
+    --y700: #9F6703;
+    --y800: #784902;
+    --y900: #522E02;
+    --bad: #B3382C;
+    --bg: #F4F9FB;
+    --line: #D6E3EA;
+    --mut: #4A6572;
+}
+
+/* Base Global Resets */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 15px/1.55 "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--b900);
+}
+
+a {
+    color: var(--b700);
+}
+
+h1 {
+    font-size: 22px;
+    margin: 0;
+    font-weight: 600;
+}
+
+h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+small {
+    color: var(--mut);
+}
+
+:focus-visible {
+    outline: 3px solid var(--y400);
+    outline-offset: 2px;
+}
+
+/* Top Header Shell */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 12px 24px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--b900);
+    text-decoration: none;
+}
+
+.brand svg {
+    color: var(--b600);
+}
+
+.brand span {
+    font-weight: 400;
+    color: var(--mut);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Global Buttons & Inputs */
+.btn {
+    font: inherit;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--b600);
+    background: #fff;
+    color: var(--b700);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: var(--b50);
+}
+
+.btn.primary {
+    background: var(--b700);
+    color: #fff;
+    border-color: var(--b700);
+}
+
+.btn.primary:hover {
+    background: var(--b800);
+}
+
+.btn.gold {
+    background: var(--y400);
+    border-color: var(--y400);
+    color: var(--b900);
+}
+
+.btn.gold:hover {
+    background: var(--y300);
+}
+
+select,
+input {
+    font: inherit;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: inherit;
+    width: 100%;
+}
+
+select {
+    width: auto;
+}
+
+/* Generic Component Blocks */
+.card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px;
+    min-width: 0;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.seg {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.seg button {
+    font: inherit;
+    border: 0;
+    background: #fff;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: var(--mut);
+}
+
+.seg button.on {
+    background: var(--b700);
+    color: #fff;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--b900);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    z-index: 9;
+}
+
+/* Unified Responsive Media Handlers */
+@media(max-width: 820px) {
+
+    .two,
+    .half {
+        grid-template-columns: 1fr;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .big {
+        font-size: 42px;
+    }
+}

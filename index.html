@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FloodWatch | Lower Shire river levels</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/public.css">
+</head>
+
+<body data-root="">
+    <header class="top"><a class="brand" href="index.html">FloodWatch <span>Lower Shire</span></a>
+        <div class="row"><label for="station" class="sr">Station</label><select id="station"></select><span class="pill ok">Live</span><a
+                class="btn primary" href="login.html">Partner login</a></div>
+    </header>
+    <div id="banner" class="banner" role="status"></div>
+    <main class="wrap">
+        <section class="grid two">
+            <div class="card"><small>Current water level</small>
+                <div class="big"><span id="level">-</span> <small>m</small></div><span id="status" class="pill ok">-</span>
+                <div class="facts">
+                    <div><span>Trend</span><b id="trend">-</b></div>
+                    <div><span>Water clarity</span><b id="turb">-</b></div>
+                    <div><span>Forecast, 24h</span><b id="fc">-</b></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <h3>Water level</h3>
+                    <div class="seg" id="range"><button data-d="1">24h</button><button data-d="7" class="on">7 days</button><button
+                            data-d="30">30 days</button></div>
+                </div>
+                <div id="chart" class="chart"></div>
+                <div class="legend"><span><i style="background:#0491C9"></i>Measured</span><span><i
+                            style="background:#FAC706"></i>Forecast</span></div>
+            </div>
+        </section>
+        <section class="card">
+            <h3>Daily history</h3><small>Highest level each day</small>
+            <div id="days" class="days"></div>
+        </section>
+        <section class="cta">
+            <p><b>Working with FloodWatch data?</b> Partner organizations can sign in for full trends and CSV or Excel downloads.</p><a
+                class="btn gold" href="login.html">Partner login</a>
+        </section>
+    </main>
+    <style>
+        .sr {
+            position: absolute;
+            left: -9999px
+        }
+    </style>
+    <script src="js/data.js"></script>
+    <script>document.querySelector('.brand').insertAdjacentHTML('afterbegin', FW.logo)</script>
+    <script src="js/flood-chart.js"></script>
+    <script src="js/public.js"></script>
+</body>
+
+</html>

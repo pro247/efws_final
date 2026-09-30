@@ -1,0 +1,167 @@
+/* Inner App Portal Layout Grid */
+.layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+/* Sidebar Dashboard Navigation Menu */
+.side {
+    background: var(--b900);
+    color: #fff;
+    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.side .brand {
+    color: #fff;
+    padding: 0 8px 16px;
+}
+
+.side .brand svg {
+    color: var(--y400);
+}
+
+.side .brand span {
+    color: var(--b200);
+}
+
+.side a {
+    color: var(--b100);
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.side a:hover {
+    background: var(--b800);
+}
+
+.side a.on {
+    background: var(--b700);
+    color: #fff;
+}
+
+.side em {
+    font-style: normal;
+    font-size: 11px;
+    background: var(--y400);
+    color: var(--b900);
+    border-radius: 99px;
+    padding: 0 7px;
+}
+
+/* Main Working Canvas Panel */
+.main {
+    padding: 20px 24px 48px;
+    display: grid;
+    gap: 16px;
+    align-content: start;
+    min-width: 0;
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Administrative Data Tables */
+.scroll {
+    overflow-x: auto;
+}
+
+.tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tbl th,
+.tbl td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+}
+
+.tbl th {
+    color: var(--mut);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.tbl tr[data-dev] {
+    cursor: pointer;
+}
+
+.tbl tr.sel {
+    background: var(--b50);
+}
+
+/* Executive KPI Block Displays */
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.kpi span {
+    color: var(--mut);
+    font-size: 13px;
+    display: block;
+}
+
+.kpi b {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.kpi small {
+    display: block;
+}
+
+/* Log Event Structures & State Placeholders */
+.events {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.soon {
+    text-align: center;
+    padding: 56px 20px;
+}
+
+.soon h2 {
+    margin: 8px 0;
+}
+
+@media(max-width: 820px) {
+    .kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .side {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    .side .brand {
+        display: none;
+    }
+
+    .side a {
+        white-space: nowrap;
+    }
+}

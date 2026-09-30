@@ -1,0 +1,65 @@
+/* Authentication Fullscreen Layout */
+.auth-page {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(160deg, var(--b900), var(--b700));
+}
+
+.auth {
+    width: 100%;
+    max-width: 420px;
+    display: grid;
+    gap: 14px;
+}
+
+.auth .seg {
+    width: 100%;
+}
+
+.auth .seg button {
+    flex: 1;
+}
+
+.auth label {
+    display: grid;
+    gap: 4px;
+    font-size: 14px;
+}
+
+.auth form {
+    display: grid;
+    gap: 12px;
+}
+
+/* Interactive State Visibility Rules mapped to data-attributes */
+#f .up {
+    display: none;
+}
+
+#f[data-mode=up] .up {
+    display: grid;
+}
+
+#f[data-role=admin] .partner {
+    display: none !important;
+}
+
+#f[data-role=partner] .admin {
+    display: none !important;
+}
+
+.err {
+    color: var(--bad);
+    margin: 0;
+    min-height: 1.4em;
+    font-size: 14px;
+}
+
+.back {
+    color: #fff;
+    position: fixed;
+    top: 16px;
+    left: 20px;
+}

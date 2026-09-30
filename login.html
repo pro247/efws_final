@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sign in | FloodWatch</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="auth-page" data-root="">
+    <a class="back" href="index.html">&larr; Back to live levels</a>
+    <main class="card auth">
+        <h1 id="title">Sign in</h1>
+        <div class="seg" id="role" aria-label="Account type"><button type="button" data-r="partner">Partner</button><button type="button"
+                data-r="admin">Admin</button></div>
+        <div class="seg" id="mode"><button type="button" data-m="in">Sign in</button><button type="button" data-m="up">Sign up</button>
+        </div>
+        <form id="f" novalidate>
+            <label class="up">Full name<input name="name" autocomplete="name"></label>
+            <label class="up partner">Organization<input name="org" autocomplete="organization"></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+            <label>Password<input name="password" type="password" required></label>
+            <label class="up admin">Admin invite code<input name="code" autocomplete="off"></label>
+            <p id="err" class="err" role="alert"></p>
+            <button class="btn primary" id="go">Sign in</button>
+        </form>
+        <small>Admin accounts need an invite code from the FloodWatch team. Partners can sign up with their organization details.</small>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

@@ -15,7 +15,7 @@ f.onsubmit = async e => {
     const d = Object.fromEntries(new FormData(f)); d.role = role; d.name ||= ''; d.org ||= ''; d.code ||= '';
     try {
         const s = mode === 'in' ? await Auth.signIn(d) : await Auth.signUp(d);
-        location.href = s.role === 'admin' ? 'admin/overview.html' : 'feature/partner-portal.html';
+        location.href = s.role === 'admin' ? 'overview.html' : 'partner-portal.html';
     } catch (x) { err.textContent = x.message; }
 };
 sync();

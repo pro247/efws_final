@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Trends | FloodWatch Partner</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/partner.css">
+</head>
+
+<body data-root="../">
+    <header class="top"><a class="brand" href="../index.html">FloodWatch <span>Partner portal</span></a>
+        <div class="row"><small id="who"></small><button class="btn" id="out">Sign out</button></div>
+    </header>
+    <main class="wrap">
+        <div class="row"><select id="station" aria-label="Station"></select><select id="days" aria-label="Range">
+                <option value="7">Last 7 days</option>
+                <option value="14">Last 14 days</option>
+                <option value="30" selected>Last 30 days</option>
+            </select><span style="flex:1"></span><button class="btn" id="csv">Download CSV</button><button class="btn" id="xls">Download
+                Excel</button></div>
+        <div class="kpis" id="kpis"></div>
+        <div class="card">
+            <h3>Water level</h3>
+            <div id="chart" class="chart"></div>
+        </div>
+        <div class="card">
+            <h3>Latest readings</h3>
+            <div class="scroll">
+                <table class="tbl">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Station</th>
+                            <th>Level</th>
+                            <th>Turbidity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="../js/data.js"></script>
+    <script src="../js/flood-chart.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/partner.js"></script>
+</body>
+
+</html>

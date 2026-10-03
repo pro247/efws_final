@@ -1,0 +1,145 @@
+/* css/partner.css - styles for partner-portal.html */
+
+:root {
+    --b50: #ECF7FE;
+    --b100: #D0EDFF;
+    --b200: #9EDAFE;
+    --b500: #0491C9;
+    --b600: #0675A2;
+    --b700: #005D82;
+    --b800: #00435F;
+    --b900: #002A3F;
+    --y50: #FFFAD8;
+    --y100: #FFF2B0;
+    --y300: #FFD74B;
+    --y400: #FAC706;
+    --y600: #C38908;
+    --y800: #784902;
+    --y900: #522E02;
+    --bad: #B3382C;
+    --line: #D6E3EA;
+    --mut: #4A6572;
+}
+
+/* Page layout */
+.wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px 24px 48px;
+    display: grid;
+    gap: 16px;
+}
+
+/* KPI cards */
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.kpi span {
+    color: var(--mut);
+    font-size: 13px;
+    display: block;
+}
+
+.kpi b {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* Table */
+.scroll {
+    overflow-x: auto;
+}
+
+.tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tbl th,
+.tbl td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+}
+
+.tbl th {
+    color: var(--mut);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* Chart */
+.chart {
+    position: relative;
+}
+
+.chart svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    touch-action: pan-y;
+}
+
+.chart text {
+    font: 11px "Public Sans", sans-serif;
+    fill: var(--mut);
+}
+
+.tip {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    display: none;
+    background: var(--b900);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    transform: translate(-50%, -110%);
+}
+
+/* Status pills */
+.pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pill.ok {
+    background: #E2F3EA;
+    color: #1F5C3F;
+}
+
+.pill.watch {
+    background: var(--y100);
+    color: var(--y800);
+}
+
+.pill.warn {
+    background: var(--y300);
+    color: var(--y900);
+}
+
+.pill.bad {
+    background: #FBE5E2;
+    color: #8E2A20;
+}
+
+/* Phones and small tablets */
+@media (max-width: 820px) {
+    .wrap {
+        padding: 16px;
+    }
+
+    .kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
